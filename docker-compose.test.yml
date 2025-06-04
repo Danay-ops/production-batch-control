@@ -1,0 +1,64 @@
+# version: '3.8'
+
+# services:
+#   test:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile.test
+#     depends_on:
+#       - db
+#     volumes:
+#       - .:/app
+#     environment:
+#       - PYTHONPATH=/app
+
+#     command: >
+#       sh -c "pytest tests/ --asyncio-mode=auto -s"
+#     env_file:
+#       - .env.test
+
+#   db:
+#     image: postgres:13
+#     environment:
+#       POSTGRES_USER: user
+#       POSTGRES_PASSWORD: password
+#       POSTGRES_DB: testdb
+#     ports:
+#       - "5433:5432"
+#     volumes:
+#       - postgres_data_test:/var/lib/postgresql/data
+
+# volumes:
+#   postgres_data_test:
+
+
+services:
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      - PYTHONPATH=/app
+      - SQLALCHEMY_DATABASE_URL=postgresql+asyncpg://user:password@db:5432/testdb
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: testdb
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data_test:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d testdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data_test:

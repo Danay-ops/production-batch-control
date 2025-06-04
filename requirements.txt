@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+pydantic
+sqlalchemy
+psycopg2-binary
+requests
+asyncpg
+pre-commit
+ruff
+alembic
+pytest
+pytest-asyncio==0.23.5
+httpx==0.24.1
+
+
+
