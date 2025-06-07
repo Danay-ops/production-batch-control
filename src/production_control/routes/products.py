@@ -2,7 +2,7 @@ from typing import List
 from fastapi import APIRouter, Depends
 
 from src.production_control.dependencies.dependencies import get_product_service
-from src.production_control.models.product import ProductAggregationRequest, ProductOut
+from src.production_control.schemas.product import ProductAggregationRequest, ProductOut
 from src.production_control.services.product import ProductService
 
 router = APIRouter(

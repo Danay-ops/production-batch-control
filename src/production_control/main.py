@@ -5,8 +5,8 @@ from src.production_control.routes import shift_tasks, products
 from src.production_control.db.base import Base
 
 # ВАЖНО: импорт моделей
-from src.production_control.db.shift_tasks import ShiftTasks
-from src.production_control.db.product import Product
+from production_control.db.models.shift_tasks import ShiftTasks
+from production_control.db.models.product import Product
 
 
 

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Optional
 
-from src.production_control.models.shift_task import ShiftTaskBase, ShiftTaskCreate, ShiftTaskOut, ShiftTaskUpdate
+from src.production_control.schemas.shift_task import ShiftTaskBase, ShiftTaskCreate, ShiftTaskOut, ShiftTaskUpdate
 
 
 class AbstractShiftTaskRepository(ABC):

@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, DeclarativeMeta, DeclarativeBase
-from src.production_control.core.setings import SQLALCHEMY_DATABASE_URL
+from production_control.core.settings import SQLALCHEMY_DATABASE_URL
 
 # Асинхронный URL подключения с asyncpg
 SQLALCHEMY_DATABASE_URL = SQLALCHEMY_DATABASE_URL

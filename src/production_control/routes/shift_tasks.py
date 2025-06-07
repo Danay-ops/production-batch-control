@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends
 from typing import List, Optional
 
 from src.production_control.dependencies.dependencies import get_task_service
-from src.production_control.models.shift_task import ShiftTaskCreate, ShiftTaskOut, ShiftTaskUpdate, ShiftTaskWithProductsSchema
+from src.production_control.schemas.shift_task import ShiftTaskCreate, ShiftTaskOut, ShiftTaskUpdate, ShiftTaskWithProductsSchema
 from src.production_control.services.shift_task import ShiftTaskService
 
 router = APIRouter(

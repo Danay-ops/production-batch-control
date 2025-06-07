@@ -39,7 +39,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from src.production_control.db.base import Base
 
 if TYPE_CHECKING:
-    from src.production_control.db.product import Product
+    from production_control.db.models.product import Product
 
 class ShiftTasks(Base):
     __tablename__ = "shift_tasks"

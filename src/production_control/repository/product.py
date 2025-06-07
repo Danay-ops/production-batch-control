@@ -2,8 +2,8 @@ from datetime import datetime
 from typing import List
 
 from fastapi import HTTPException
-from src.production_control.db.product import Product
-from src.production_control.db.shift_tasks import ShiftTasks
+from production_control.db.models.product import Product
+from production_control.db.models.shift_tasks import ShiftTasks
 from src.production_control.repository.abstract_product import AbstractProductRepository
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select

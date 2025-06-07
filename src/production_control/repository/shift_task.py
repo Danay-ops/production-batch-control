@@ -3,8 +3,8 @@ from sqlalchemy import select
 from sqlalchemy.orm import selectinload
 
 from typing import Optional
-from src.production_control.db.shift_tasks import ShiftTasks
-from src.production_control.models.shift_task import ShiftTaskCreate, ShiftTaskOut, ShiftTaskUpdate, ShiftTaskWithProductsSchema
+from production_control.db.models.shift_tasks import ShiftTasks
+from src.production_control.schemas.shift_task import ShiftTaskCreate, ShiftTaskOut, ShiftTaskUpdate, ShiftTaskWithProductsSchema
 from src.production_control.repository.abstract_shift_task import AbstractShiftTaskRepository
 from sqlalchemy.ext.asyncio import AsyncSession
 

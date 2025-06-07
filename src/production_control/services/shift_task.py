@@ -2,7 +2,7 @@ from datetime import date
 from typing import Optional
 
 from fastapi import HTTPException
-from src.production_control.models.shift_task import ShiftTaskCreate, ShiftTaskOut, ShiftTaskUpdate
+from src.production_control.schemas.shift_task import ShiftTaskCreate, ShiftTaskOut, ShiftTaskUpdate
 from src.production_control.repository.abstract_shift_task import AbstractShiftTaskRepository
 
 

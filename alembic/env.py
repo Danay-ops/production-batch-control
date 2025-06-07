@@ -8,8 +8,9 @@ from alembic import context
 # добавляем путь к src
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 
+from production_control.db.models import shift_tasks
 from src.production_control.db.base import Base
-from src.production_control.db import product, shift_tasks  # <-- подтяни ВСЕ модели, чтобы Alembic их видел
+from production_control.db.models import product  # <-- подтяни ВСЕ модели, чтобы Alembic их видел
 
 # this is the Alembic Config object
 config = context.config
